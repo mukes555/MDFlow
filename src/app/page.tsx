@@ -198,6 +198,23 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* FAQ — long-tail SEO */}
+      <section className="max-w-3xl mx-auto px-6 pb-24">
+        <h2 className="text-2xl font-bold text-stone-900 text-center mb-3 tracking-tight">Frequently asked questions</h2>
+        <p className="text-sm text-stone-500 text-center mb-10 max-w-md mx-auto">Common questions about converting Markdown to PDF with Mermaid diagrams.</p>
+        <div className="space-y-3">
+          {content.faq.map((item) => (
+            <details key={item.q} className="card group p-5">
+              <summary className="text-sm font-semibold text-stone-800 cursor-pointer list-none flex items-center justify-between gap-4">
+                {item.q}
+                <span className="flex-shrink-0 text-stone-400 group-open:rotate-45 transition-transform text-lg leading-none">+</span>
+              </summary>
+              <p className="text-sm text-stone-500 leading-relaxed mt-3 pt-3 border-t border-stone-100">{item.a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="max-w-5xl mx-auto px-6 py-8 border-t border-stone-100">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3">

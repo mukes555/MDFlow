@@ -45,6 +45,19 @@ export default function ConverterPage() {
     parseMarkdown(getSampleMarkdown())
   );
   const [viewMode, setViewMode] = useState<ViewMode>("split");
+
+  // On small screens, force out of split mode to avoid unusable 50/50 layout
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 640px)");
+    const handler = (e: MediaQueryListEvent | MediaQueryList) => {
+      if (e.matches && viewMode === "split") {
+        setViewMode("preview");
+      }
+    };
+    handler(mq); // check on mount
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, [viewMode]);
   const [exporting, setExporting] = useState<ExportFormat | null>(null);
   const [exported, setExported] = useState<ExportFormat | null>(null);
   const [isDragOver, setIsDragOver] = useState(false);
@@ -58,12 +71,14 @@ export default function ConverterPage() {
 
   // Sync rendered HTML into preview div via ref so that unrelated state
   // updates (exporting, exported, etc.) never reset the DOM and destroy
-  // mermaid-rendered SVGs.
+  // mermaid-rendered SVGs. Also re-runs when viewMode changes because
+  // switching to "edit" unmounts the preview div — when switching back
+  // a fresh empty div mounts and needs to be populated.
   useEffect(() => {
     if (previewRef.current) {
       previewRef.current.innerHTML = renderedHtml;
     }
-  }, [renderedHtml]);
+  }, [renderedHtml, viewMode]);
 
   // Render mermaid diagrams using v11 API
   useEffect(() => {
@@ -193,7 +208,7 @@ export default function ConverterPage() {
 
     const timer = setTimeout(render, 150);
     return () => clearTimeout(timer);
-  }, [renderedHtml]);
+  }, [renderedHtml, viewMode]);
 
   // File upload handler
   const handleFileUpload = useCallback((file: File) => {
@@ -289,6 +304,8 @@ export default function ConverterPage() {
                 aria-label={`${label} view`}
                 onClick={() => setViewMode(mode)}
                 className={`flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium transition-all focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-sage-500 ${
+                  mode === "split" ? "hidden sm:flex" : ""
+                } ${
                   viewMode === mode
                     ? "bg-white text-stone-700 shadow-sm"
                     : "text-stone-500 hover:text-stone-700"
@@ -324,7 +341,7 @@ export default function ConverterPage() {
                 ) : (
                   <Icon className="w-3 h-3 opacity-70 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
                 )}
-                {label}
+                <span className="hidden sm:inline">{label}</span>
               </button>
             );
           })}

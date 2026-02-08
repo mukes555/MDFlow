@@ -77,5 +77,23 @@
   "footer": {
     "tagline": "The free Markdown to PDF converter with Mermaid support.",
     "note": "Free and open source. No account required."
-  }
+  },
+  "faq": [
+    {
+      "q": "Can MDFlow convert Mermaid diagrams to PDF?",
+      "a": "Yes. MDFlow renders Mermaid flowcharts, sequence diagrams, class diagrams, and Gantt charts as high-resolution images embedded directly in the exported PDF. Smart page breaks ensure diagrams are never split across pages."
+    },
+    {
+      "q": "Is MDFlow free to use?",
+      "a": "Completely free. No sign-up, no paywall, no usage limits. MDFlow runs 100% in your browser \u2014 your files never leave your device."
+    },
+    {
+      "q": "What formats can MDFlow export to?",
+      "a": "MDFlow exports Markdown to three formats: PDF (print-ready with smart page breaks), DOCX (Microsoft Word with embedded images), and HTML (self-contained with live Mermaid rendering)."
+    },
+    {
+      "q": "Does MDFlow upload my files to a server?",
+      "a": "No. MDFlow processes everything client-side in your browser. Your Markdown files are never uploaded to any server. There is zero tracking and zero data collection."
+    }
+  ]
 }

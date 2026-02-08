@@ -265,7 +265,9 @@ export default function ConverterPage() {
       setExported(format);
       setTimeout(() => setExported(null), 2500);
     } catch (err) {
-      console.error("Export error:", err);
+      if (process.env.NODE_ENV === "development") {
+        console.error("Export error:", err);
+      }
     } finally {
       setExporting(null);
     }

@@ -1,0 +1,81 @@
+{
+  "meta": {
+    "title": "Markdown to PDF, DOCX & HTML Converter with Mermaid Diagrams | MDFlow",
+    "description": "Free online Markdown converter with Mermaid diagram support. Export to PDF, Word (DOCX), and HTML instantly. No sign-up, no uploads \u2014 runs 100% in your browser.",
+    "ogTitle": "MDFlow \u2014 Convert Markdown with Mermaid Diagrams to PDF, Word & HTML",
+    "keywords": "markdown to pdf, markdown to docx, markdown to word, markdown converter, mermaid diagram pdf, md to pdf, convert markdown online, free markdown converter, markdown mermaid export, browser markdown converter"
+  },
+  "nav": {
+    "brand": "MDFlow",
+    "cta": "Open Converter"
+  },
+  "hero": {
+    "tagline": "Free & open source",
+    "title": "Convert Markdown to PDF, Word & HTML",
+    "titleAccent": "with Mermaid diagrams.",
+    "subtitle": "The only free online converter that exports Markdown with Mermaid flowcharts, sequence diagrams, and tables to PDF, DOCX, and HTML. No sign-up. No uploads. Runs entirely in your browser.",
+    "cta": "Start converting",
+    "secondary": "See how it works"
+  },
+  "features": [
+    {
+      "title": "Full Mermaid diagram support",
+      "description": "Flowcharts, sequence diagrams, class diagrams, and Gantt charts \u2014 rendered as crisp images in your PDF and Word exports."
+    },
+    {
+      "title": "Export to PDF, DOCX & HTML",
+      "description": "Three optimized formats: print-ready PDF with smart page breaks, Word documents with embedded images, or self-contained HTML."
+    },
+    {
+      "title": "100% browser-based",
+      "description": "No server uploads. No file size limits. Your Markdown files are converted entirely client-side \u2014 nothing leaves your device."
+    },
+    {
+      "title": "Live Markdown preview",
+      "description": "See your rendered document update in real-time as you type, including Mermaid diagrams, tables, and code blocks."
+    },
+    {
+      "title": "Completely private",
+      "description": "Zero tracking, zero data collection. Your files exist only in your browser tab and nowhere else."
+    },
+    {
+      "title": "Free, no account needed",
+      "description": "No sign-up, no paywall, no usage limits. Open the Markdown converter and start exporting immediately."
+    }
+  ],
+  "steps": [
+    {
+      "number": "1",
+      "title": "Drop your .md file",
+      "description": "Drag a Markdown file into the editor, paste from clipboard, or just start typing your content."
+    },
+    {
+      "number": "2",
+      "title": "Preview with Mermaid",
+      "description": "Your Markdown renders in real-time with full Mermaid diagram support, tables, code blocks, and formatting."
+    },
+    {
+      "number": "3",
+      "title": "Export to PDF, Word or HTML",
+      "description": "Pick your format \u2014 PDF, DOCX, or HTML. Your file downloads instantly with all diagrams embedded."
+    }
+  ],
+  "formats": [
+    {
+      "name": "PDF",
+      "description": "Print-ready PDF with embedded Mermaid diagrams, smart page breaks that never split charts, and professional typography."
+    },
+    {
+      "name": "DOCX",
+      "description": "Structured Word document with headings, tables, code blocks, and Mermaid diagrams embedded as high-resolution images."
+    },
+    {
+      "name": "HTML",
+      "description": "Self-contained HTML file with embedded styles and live Mermaid rendering via CDN. Ready to host or share."
+    }
+  ],
+  "footer": {
+    "tagline": "The free Markdown to PDF converter with Mermaid support.",
+    "note": "Free and open source. No account required."
+  }
+}
